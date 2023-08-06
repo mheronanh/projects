@@ -24,4 +24,6 @@ while True:
     rows = run_query()
     if len(rows) == 4:    
         st.write(rows)
+    else:
+        st.write("Not Enough Data!")
     time.sleep(5)
