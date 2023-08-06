@@ -25,5 +25,5 @@ while True:
     rows = run_query()
     data = rows.model_dump_json()
     data = json.loads(data)
-    st.write(data[0]['0'])
+    st.write(data['data'][0])
     time.sleep(5)
