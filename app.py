@@ -4,6 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import time
 import plotly.graph_objects as go
+from supabase import create_client, Client
 
 data = "data kebisingan(1)-rows.csv"
 
