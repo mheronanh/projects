@@ -7,7 +7,7 @@ import plotly.graph_objects as go
 
 data = "data kebisingan(1)-rows.csv"
 
-@st.experimental_memo
+@st.cache_data
 def get_data() -> pd.DataFrame:
     return pd.read_csv(data, delimiter=";")
 
