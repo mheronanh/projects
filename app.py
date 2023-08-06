@@ -36,7 +36,7 @@ while i < 636:
         for j in range(4):
             for k in range(4):
                 fig.add_annotation(x=j, y=k, text=str(z[j,k]), showarrow=False, font_size=16, font_color='black', bgcolor='white', opacity=0.75 )
-        fig.update_layout(margin=dict(l=10, r=10, b=10, pad=10), plot_bgcolor='white')
+        fig.update_layout(margin=dict(l=10, r=10, b=10, pad=10), paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
         st.plotly_chart(fig, theme="streamlit")
         i += 4
         time.sleep(1)
