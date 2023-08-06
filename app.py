@@ -23,5 +23,5 @@ while True:
     supabase = init_connection()
     rows = run_query()
     data = rows.model_dump_json()
-    st.write(data['data'][0])
+    st.write(data)
     time.sleep(5)
