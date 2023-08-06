@@ -31,6 +31,6 @@ while True:
     rows = json.loads(rows)
     if len(rows['data']) == 4:
         with placeholder.container():
-            df = convert_dict_to_df(rows['data'])
+            df = convert_dict_to_df(rows['data']).sort_values(by=["kebisingan"])
             st.write(df)
     time.sleep(5)
