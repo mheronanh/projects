@@ -23,6 +23,7 @@ placeholder = st.empty()
 while True:
     supabase = init_connection()
     rows = run_query()
+    data = data.model_dump_json()
     data = json.loads(rows)
     st.write(type(data))
     time.sleep(5)
