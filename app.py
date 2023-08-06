@@ -1,4 +1,4 @@
-import streamlit as st
+ngimport streamlit as st
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -20,7 +20,7 @@ def init_connection():
 
 @st.cache_data(ttl=15)
 def run_query():
-    return supabase.table("mytable").select("*").order("kebisingan", False).limit(1).execute()
+    return supabase.table("mytable").select("*").order("kebisingan", ascending = False).limit(1).execute()
 
 st.title("Real-Time / Live Data Science Dashboard")
 
