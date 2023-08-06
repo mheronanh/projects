@@ -14,12 +14,14 @@ def init_connection():
 
 @st.cache_data(ttl=15)
 def run_query():
-    return supabase.table("mytable").select("*").order("kebisingan", desc=True).limit(1).execute()
+    return supabase.table("mytable").select("*").order("kebisingan", desc=True).limit(4).execute()
 
 st.title("Real-Time / Live Data Science Dashboard")
 
+placeholder = st.empty()
 while True:
     supabase = init_connection()
     rows = run_query()
-    st.write(rows)
+    if len(rows) == 4:    
+        st.write(rows)
     time.sleep(5)
