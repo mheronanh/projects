@@ -28,6 +28,7 @@ while True:
     supabase = init_connection()
     rows = run_query()
     st.write(rows)
+    time.sleep(5)
 
 
         
