@@ -25,7 +25,7 @@ st.title("Real-Time / Live Data Science Dashboard")
 
 supabase = init_connection()
 rows = run_query()
-print(rows)
+st.write(rows)
 
 
         
