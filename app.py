@@ -22,8 +22,7 @@ placeholder = st.empty()
 while True:
     supabase = init_connection()
     rows = run_query()
-    if len(rows) == 4:    
-        st.write(rows)
-    else:
-        st.write("Not Enough Data!")
+    print(type(rows))
+    st.write(type(rows))
+    st.write(rows)
     time.sleep(5)
