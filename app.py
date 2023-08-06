@@ -20,7 +20,7 @@ def init_connection():
 
 @st.cache_data(ttl=15)
 def run_query():
-    return supabase.table("mytable").select("*").order("kebisingan", {ascending=False}).limit(1).execute()
+    return supabase.table("mytable").select("*").order("kebisingan", 0).limit(1).execute()
 
 st.title("Real-Time / Live Data Science Dashboard")
 
