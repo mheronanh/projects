@@ -23,6 +23,6 @@ while True:
     supabase = init_connection()
     rows = run_query()
     data = rows.model_dump_json()
-    st.write(type(data['Sensor1']))
+    st.write(data)
     st.write(rows)
     time.sleep(5)
