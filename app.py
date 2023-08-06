@@ -6,12 +6,6 @@ import time
 import plotly.graph_objects as go
 from supabase import create_client, Client
 
-data = "data kebisingan(1)-rows.csv"
-
-@st.cache_data
-def get_data() -> pd.DataFrame:
-    return pd.read_csv(data, delimiter=";")
-
 @st.cache_resource
 def init_connection():
     url = st.secrets["supabase_url"]
@@ -20,7 +14,7 @@ def init_connection():
 
 @st.cache_data(ttl=15)
 def run_query():
-    return supabase.table("mytable").select("*").order("kebisingan").limit(1).execute()
+    return supabase.table("mytable").select("*").order("kebisingan",desc=True)
 
 st.title("Real-Time / Live Data Science Dashboard")
 
@@ -29,6 +23,3 @@ while True:
     rows = run_query()
     st.write(rows)
     time.sleep(5)
-
-
-        
