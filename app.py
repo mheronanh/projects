@@ -24,9 +24,10 @@ def run_query():
 
 st.title("Real-Time / Live Data Science Dashboard")
 
-supabase = init_connection()
-rows = run_query()
-st.write(rows)
+while True:
+    supabase = init_connection()
+    rows = run_query()
+    st.write(rows)
 
 
         
