@@ -24,13 +24,13 @@ def convert_dict_to_df(data):
 st.title("Real-Time / Live Data Science Dashboard")
 
 placeholder = st.empty()
-with placeholder.container():
-    while True:
-        supabase = init_connection()
-        rows = run_query()
-        rows = rows.model_dump_json()
-        rows = json.loads(rows)
-        if len(rows['data']) == 4:
+while True:
+    supabase = init_connection()
+    rows = run_query()
+    rows = rows.model_dump_json()
+    rows = json.loads(rows)
+    if len(rows['data']) == 4:
+        with placeholder.container():
             df = convert_dict_to_df(rows['data']).sort_values(by=["kebisingan"])
             z = df.iloc[0:4, 1:5].values
             st.write(z)
@@ -51,6 +51,7 @@ with placeholder.container():
                     fig.add_annotation(x=j, y=k, text=str(z[j,k]), showarrow=False, font_size=16, font_color='black', bgcolor='white', opacity=0.75 )
             fig.update_layout(margin=dict(l=10, r=10, b=10, pad=10), plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)')
             st.plotly_chart(fig, theme="streamlit")
-        else:
+    else:
+        with placeholder.container():
             st.write("Not Enough Data!")
-        time.sleep(1)
+    time.sleep(1)
