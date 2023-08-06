@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import time
 import plotly.graph_objects as go
 from supabase import create_client, Client
+import json
 
 @st.cache_resource
 def init_connection():
@@ -22,6 +23,6 @@ placeholder = st.empty()
 while True:
     supabase = init_connection()
     rows = run_query()
-    data = rows.json()
+    data = json.loads(rows)
     st.write(type(data))
     time.sleep(5)
