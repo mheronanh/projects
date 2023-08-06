@@ -32,7 +32,7 @@ while True:
     if len(rows['data']) == 4:
         with placeholder.container():
             df = convert_dict_to_df(rows['data']).sort_values(by=["kebisingan"])
-            z = df.iloc[(0:4, 1:5].values
+            z = df.iloc[0:4, 1:5].values
             st.write(z)
             fig = go.Figure(data=
             go.Contour(
