@@ -20,7 +20,6 @@ while i < 636:
     with placeholder.container():
         st.dataframe(df[i-4:i]) 
         z = df.iloc[(i-4):i, 1:5].values
-        st.write(z)
         fig = go.Figure(data=
             go.Contour(
                 z = z,
