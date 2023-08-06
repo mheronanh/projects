@@ -22,6 +22,6 @@ placeholder = st.empty()
 while True:
     supabase = init_connection()
     rows = run_query()
-    st.write(type(rows[0]))
+    st.write(type(rows['data']))
     st.write(rows)
     time.sleep(5)
