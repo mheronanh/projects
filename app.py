@@ -32,5 +32,21 @@ while True:
     if len(rows['data']) == 4:
         with placeholder.container():
             df = convert_dict_to_df(rows['data']).sort_values(by=["kebisingan"])
-            st.write(df)
-    time.sleep(5)
+            z = df.iloc[(i-4):i, 1:5].values
+            st.write(z)
+            fig = go.Figure(data=
+            go.Contour(
+                z = z,
+                contours = dict(
+                    coloring ='heatmap',
+                    showlabels = True,
+                    labelfont = dict(
+                        size = 10,
+                        color = 'white',
+                    )
+                )
+            ))
+        for j in range(4):
+            for k in range(4):
+                fig.add_annotation(x=j, y=k, text=str(z[j,k]), showarrow=False, font_size=16, font_color='black', bgcolor='white', opacity=0.75 )
+    time.sleep(1)
