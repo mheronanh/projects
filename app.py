@@ -52,6 +52,7 @@ while True:
             fig.update_layout(margin=dict(l=10, r=10, b=10, pad=10), plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)')
             st.plotly_chart(fig, theme="streamlit")
             fig_surface = go.Figure(data=[go.Surface(z=z)])
+            fig_surface.update_layout(margin=dict(l=10, r=10, b=10, pad=10), plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)')
             st.plotly_chart(fig_surface)
     else:
         with placeholder.container():
