@@ -34,7 +34,6 @@ while True:
             df = convert_dict_to_df(rows['data']).sort_values(by=["kebisingan"])
             z = df.iloc[0:4, 1:5].values
             st.write(z)
-            '''
             fig = go.Figure(data=
             go.Contour(
                 z = z,
@@ -52,10 +51,9 @@ while True:
                     fig.add_annotation(x=j, y=k, text=str(z[j,k]), showarrow=False, font_size=16, font_color='black')
             fig.update_layout(margin=dict(l=10, r=10, b=10, pad=10), plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)')
             st.plotly_chart(fig, theme="streamlit")
-            '''
             fig_surface = go.Figure(data=[go.Surface(z=z)])
             fig_surface.update_layout(margin=dict(l=10, r=10, b=10, pad=10), plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)')
-            st.plotly_chart(fig_surface)
+            st.plotly_chart(fig_surface, theme="streamlit")
     else:
         with placeholder.container():
             st.write("Not Enough Data!")
