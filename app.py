@@ -49,10 +49,10 @@ while True:
             for j in range(4):
                 for k in range(4):
                     fig.add_annotation(x=j, y=k, text=str(z[j,k]), showarrow=False, font_size=16, font_color='white')
-            fig.update_layout(margin=dict(l=10, r=10, b=10, pad=10), plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)')
+            fig.update_layout(margin=dict(l=10, r=10, b=10, pad=10), plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)', width=750, height=750)
             st.plotly_chart(fig, theme="streamlit")
             fig_surface = go.Figure(data=[go.Surface(z=z)])
-            fig_surface.update_layout(margin=dict(l=10, r=10, b=10, pad=10), plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)')
+            fig_surface.update_layout(margin=dict(l=10, r=10, b=10, pad=10), plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)', width=750, height=750)
             st.plotly_chart(fig_surface, theme="streamlit")
     else:
         with placeholder.container():
