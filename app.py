@@ -13,7 +13,7 @@ def init_connection():
     key = st.secrets["supabase_key"]
     return create_client(url, key)
 
-@st.cache_data(ttl=15)
+@st.cache_resource
 def run_query():
     return supabase.table("mytable").select("*").order("kebisingan", desc=True).limit(4).execute()
 
